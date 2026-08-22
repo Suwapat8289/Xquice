@@ -1,21 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
-
-:root {
-    --main-color: #b388ff; /* สีหลักของระบบ (ตั้งค่าเริ่มต้นเป็นสีม่วง) */
-    --bg-dark: #08080a;
-    --card-bg: #121216;
-}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    cursor: none;
+    cursor: none; /* ซ่อนเมาส์ปกติของระบบ */
 }
 
 body {
     font-family: 'Fira Code', monospace;
-    background-color: var(--bg-dark);
+    background-color: #08080a;
     color: #e1e1e6;
     display: flex;
     justify-content: center;
@@ -25,51 +19,52 @@ body {
     overflow: hidden;
 }
 
-/* --- Cursor Effects --- */
+/* --- เอฟเฟกต์เกี่ยวกับเมาส์ (Cursor Effects) --- */
 .cursor-dot {
     width: 6px;
     height: 6px;
     background-color: #ffffff;
     border-radius: 50%;
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 9999;
 }
 
 .cursor-outline {
-    width: 36px;
-    height: 36px;
-    border: 1px solid var(--main-color);
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(179, 136, 255, 0.6);
     border-radius: 50%;
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 9998;
-    transition: border-color 0.3s ease;
 }
 
 .cursor-glow {
-    width: 380px;
-    height: 380px;
-    background: radial-gradient(circle, var(--main-color) 0%, transparent 70%);
-    opacity: 0.15;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(179, 136, 255, 0.12) 0%, rgba(56, 189, 248, 0.05) 40%, rgba(0,0,0,0) 70%);
     border-radius: 50%;
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 1;
-    transition: background 0.3s ease;
 }
 
 #particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     z-index: 2;
 }
 
@@ -82,182 +77,93 @@ body {
     perspective: 1000px;
 }
 
-/* --- Card Structure & Cyberpunk HUD --- */
+/* --- โครงสร้างการ์ด --- */
 .outer-border {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(179, 136, 255, 0.2);
     border-radius: 28px;
     padding: 30px;
-    max-width: 460px;
+    max-width: 480px;
     width: 100%;
     background: rgba(18, 18, 22, 0.75);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(12px);
     text-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 20px rgba(179, 136, 255, 0.1);
     transform-style: preserve-3d;
-    transition: border-color 0.3s ease;
 }
 
 .card {
-    background-color: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #16161a;
+    border: 1px solid #2a2a35;
     border-radius: 20px;
-    padding: 30px 25px;
+    padding: 35px 30px;
     text-align: left;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
     position: relative;
     overflow: hidden;
 }
 
-/* เส้นสแกนวิ้งๆ สไตล์ Sci-Fi */
-.scan-line {
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--main-color), transparent);
-    position: absolute;
-    top: -100%;
-    left: 0;
-    opacity: 0.6;
-    animation: scan 4s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes scan {
-    0% { top: -10%; }
-    100% { top: 110%; }
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 18px;
-}
-
 .avatar {
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--main-color);
-    box-shadow: 0 0 18px var(--main-color);
-    transition: all 0.3s ease;
+    border: 2px solid #b388ff;
+    margin-bottom: 25px;
+    box-shadow: 0 0 20px rgba(179, 136, 255, 0.4);
+    transition: transform 0.3s ease;
 }
 
 .avatar:hover {
-    transform: scale(1.08) rotate(4deg);
-}
-
-.status-badge {
-    font-size: 0.65rem;
-    background: rgba(0, 255, 128, 0.1);
-    border: 1px solid rgba(0, 255, 128, 0.3);
-    color: #00ff80;
-    padding: 4px 10px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    letter-spacing: 1px;
-}
-
-.status-dot {
-    width: 6px;
-    height: 6px;
-    background-color: #00ff80;
-    border-radius: 50%;
-    box-shadow: 0 0 8px #00ff80;
+    transform: scale(1.08) rotate(5deg);
 }
 
 .sub-tag {
-    color: var(--main-color);
+    color: #b388ff;
     font-size: 0.75rem;
-    font-weight: 600;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-transform: uppercase;
-    transition: color 0.3s ease;
 }
 
 .glow-text {
-    text-shadow: 0 0 10px var(--main-color);
+    text-shadow: 0 0 8px rgba(179, 136, 255, 0.6);
 }
 
 .name {
-    font-size: 2.1rem;
-    font-weight: 500;
+    font-size: 2.2rem;
+    font-weight: 400;
     line-height: 1.2;
     color: #ffffff;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
     letter-spacing: -0.5px;
 }
 
-/* แท็กหมวดหมู่เกม */
-.tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-.tag {
-    font-size: 0.7rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #c9c9d4;
-    padding: 4px 10px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-}
-
-.tag:hover {
-    border-color: var(--main-color);
-    color: var(--main-color);
-    box-shadow: 0 0 8px var(--main-color);
-}
-
 .info p {
-    color: #9292a0;
+    color: #8d8d99;
     font-size: 0.85rem;
     line-height: 1.8;
 }
 
-.info i {
-    color: var(--main-color);
-    margin-right: 6px;
-}
-
-/* Social Icons */
 .socials {
     display: flex;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 20px;
+    gap: 18px;
+    margin-bottom: 25px;
 }
 
 .socials a {
     color: #ffffff;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     text-decoration: none;
     opacity: 0.7;
     transition: all 0.3s ease;
 }
 
 .socials a:hover {
-    color: var(--main-color);
+    color: #b388ff;
     opacity: 1;
-    transform: translateY(-4px) scale(1.2);
-    text-shadow: 0 0 12px var(--main-color);
-}
-
-.roblox-icon {
-    width: 1.1rem;
-    height: 1.1rem;
-    vertical-align: middle;
-    transition: filter 0.3s ease;
-}
-
-.socials a:hover .roblox-icon {
-    filter: drop-shadow(0 0 8px var(--main-color));
+    transform: translateY(-5px) scale(1.2);
+    text-shadow: 0 0 10px #b388ff;
 }
 
 .footer-text {
@@ -265,35 +171,9 @@ body {
     color: #52525b;
 }
 
-/* --- Theme Switchers --- */
-.theme-switchers {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 15px;
-}
-
-.dot-btn {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.dot-btn:hover { transform: scale(1.4); }
-
-.purple { background-color: #b388ff; box-shadow: 0 0 8px #b388ff; }
-.cyan   { background-color: #38bdf8; box-shadow: 0 0 8px #38bdf8; }
-.green  { background-color: #00ffcc; box-shadow: 0 0 8px #00ffcc; }
-.red    { background-color: #ff5555; box-shadow: 0 0 8px #ff5555; }
-.gold   { background-color: #ffd700; box-shadow: 0 0 8px #ffd700; }
-.pink   { background-color: #ff77a9; box-shadow: 0 0 8px #ff77a9; }
-
-/* Animations */
+/* --- Animations --- */
 @keyframes appear {
-    from { opacity: 0; transform: scale(0.88) translateY(20px); }
+    from { opacity: 0; transform: scale(0.85) translateY(20px); }
     to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
@@ -312,12 +192,36 @@ body {
 .animate__slideUpDelay { animation: slideUp 1s ease-out 0.2s forwards; opacity: 0; }
 .animate__fadeIn { animation: fadeIn 1.2s ease-out 0.4s forwards; opacity: 0; }
 
-/* Responsive สำหรับมือถือ */
-@media (max-width: 600px) {
-    .cursor-dot, .cursor-outline, .cursor-glow { display: none !important; }
-    body { cursor: auto; padding: 15px; }
-    .outer-border { padding: 20px; }
-    .card { padding: 20px 18px; }
-    .name { font-size: 1.7rem; }
-    .avatar { width: 68px; height: 68px; }
+.socials a img {
+    transition: filter 0.3s ease;
 }
+.socials a:hover img {
+    filter: drop-shadow(0 0 8px #b388ff);
+}
+
+/* ปุ่มจุดเลือกสีธีม */
+.theme-switchers {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.dot-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dot-btn:hover {
+    transform: scale(1.3);
+}
+
+/* สีของแต่ละปุ่ม */
+.purple { background-color: #b388ff; box-shadow: 0 0 8px #b388ff; }
+.cyan   { background-color: #38bdf8; box-shadow: 0 0 8px #38bdf8; }
+.green  { background-color: #00ffcc; box-shadow: 0 0 8px #00ffcc; }
+.red    { background-color: #ff5555; box-shadow: 0 0 8px #ff5555; }
