@@ -127,17 +127,5 @@
         // 2. เปลี่ยนสีวงแหวนเมาส์
         const outline = document.getElementById("cursor-outline");
         if (outline) outline.style.borderColor = mainColor;
-
-        // 3. เปลี่ยนสี Effect ตอน Hover ไอคอนโซเชียล
-        document.querySelectorAll('.socials a').forEach(el => {
-            el.onmouseenter = () => {
-                el.style.color = mainColor;
-                el.style.textShadow = `0 0 10px ${mainColor}`;
-            };
-            el.onmouseleave = () => {
-                el.style.color = "#ffffff";
-                el.style.textShadow = "none";
-            };
-        });
     }
 </script>
