@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suwaphat Kaewboonsri - Profile</title>
+    <title>Profile - Ultra Effects</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- แสงไฟเรืองตามเมาส์ และ จุด Custom Cursor -->
+    <!-- แสงไฟวิ่งตามเมาส์ (Mouse Follower Light) -->
     <div class="cursor-glow" id="cursor-glow"></div>
+    <!-- จุดเมาส์ + วงแหวนตามเมาส์ -->
     <div class="cursor-dot" id="cursor-dot"></div>
     <div class="cursor-outline" id="cursor-outline"></div>
 
@@ -18,92 +19,80 @@
     <div id="particles-js"></div>
 
     <div class="main-wrapper">
+        <!-- เพิ่ม attribute data-tilt สำหรับเอฟเฟกต์การ์ดเอียง 3D -->
         <div class="outer-border animate__appear" id="tilt-card">
             <div class="card animate__slideUp">
-                <!-- เส้นสแกนเรเซอร์ Cyberpunk -->
-                <div class="scan-line"></div>
+                <img src="yourname.jpg" alt="Profile Picture" class="avatar">
                 
-                <div class="card-header">
-                    <img src="yourname.jpg" alt="Profile Picture" class="avatar">
-                    <div class="status-badge">
-                        <span class="status-dot"></span> ONLINE
-                    </div>
-                </div>
+                <p class="sub-tag animate__fadeIn glow-text">Minecraft Rov Pubg Freefire</p>
                 
-                <p class="sub-tag animate__fadeIn glow-text">REN--REM.TH.MINECRAFT</p>
+                <h1 class="name animate__fadeIn glitch-text">Suwaphat<br>Kaewboonsri</h1>
                 
-                <h1 class="name animate__fadeIn glitch-text" data-text="Suwaphat Kaewboonsri">Suwaphat<br>Kaewboonsri</h1>
-                
-                <!-- แท็กเกม / ความสนใจ -->
-                <div class="tags-container animate__fadeIn">
-                    <span class="tag">Minecraft</span>
-                    <span class="tag">RoV</span>
-                    <span class="tag">PUBG</span>
-                    <span class="tag">Free Fire</span>
-                </div>
-
                 <div class="info animate__fadeIn">
-                    <p><i class="fa-solid fa-user-astronaut"></i> Age: 15</p>
-                    <p><i class="fa-solid fa-cake-candles"></i> Birthday: 11 March 2009</p>
+                    <p>age–15</p>
+                    <p>birthday–11 March 2009</p>
                 </div>
             </div>
 
-            <!-- ไอคอนโซเชียลมีเดีย -->
-            <div class="socials animate__slideUpDelay">
-                <a href="https://discord.com/users/1032559564895301634" target="_blank" title="Discord"><i class="fa-brands fa-discord"></i></a>
-                <a href="https://www.facebook.com/suwaphat.kaewboonsri/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://instagram.com/yourusername" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com/yourusername" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.roblox.com/users/4151017282/profile" target="_blank" title="Roblox">
-                    <img src="https://cdn.simpleicons.org/roblox/ffffff" alt="Roblox" class="roblox-icon">
-                </a>
-                <a href="https://youtube.com/@yourchannel" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://space.bilibili.com/yourid" target="_blank" title="Bilibili"><i class="fa-solid fa-tv"></i></a>
-            </div>
-
-            <!-- ปุ่มเปลี่ยนสีธีม 6 สี -->
-            <div class="theme-switchers">
-                <span class="dot-btn purple" onclick="changeTheme('#b388ff')"></span>
-                <span class="dot-btn cyan" onclick="changeTheme('#38bdf8')"></span>
-                <span class="dot-btn green" onclick="changeTheme('#00ffcc')"></span>
-                <span class="dot-btn red" onclick="changeTheme('#ff5555')"></span>
-                <span class="dot-btn gold" onclick="changeTheme('#ffd700')"></span>
-                <span class="dot-btn pink" onclick="changeTheme('#ff77a9')"></span>
-            </div>
+<div class="socials animate__slideUpDelay">
+    <!-- Discord (ใส่เป็นลิงก์คำชวนเข้าเซิร์ฟเวอร์ หรือโปรไฟล์) -->
+    <a href="https://discord.com/users/1032559564895301634" target="_blank" class="hvr-pulse"><i class="fa-brands fa-discord"></i></a>
+    
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/suwaphat.kaewboonsri/" target="_blank" class="hvr-pulse"><i class="fa-brands fa-facebook"></i></a>
+    
+    <!-- Instagram -->
+    <a href="https://instagram.com/yourusername" target="_blank" class="hvr-pulse"><i class="fa-brands fa-instagram"></i></a>
+    
+    <!-- X (Twitter) -->
+    <a href="https://x.com/yourusername" target="_blank" class="hvr-pulse"><i class="fa-brands fa-x-twitter"></i></a>
+    
+    <!-- Roblox -->
+    <a href="https://www.roblox.com/users/4151017282/profile" target="_blank" class="hvr-pulse">
+    <img src="https://cdn.simpleicons.org/roblox/ffffff" alt="Roblox" style="width: 1.1rem; height: 1.1rem; vertical-align: middle;"></a>
+    
+    <!-- YouTube -->
+    <a href="https://youtube.com/@yourchannel" target="_blank" class="hvr-pulse"><i class="fa-brands fa-youtube"></i></a>
+    
+    <!-- Bilibili / อื่นๆ -->
+    <a href="https://space.bilibili.com/yourid" target="_blank" class="hvr-pulse"><i class="fa-solid fa-tv"></i></a>
+</div>
 
             <p class="footer-text animate__fadeIn">( Made with TawanKub )</p>
         </div>
     </div>
 
-    <!-- Scripts -->
+<div class="theme-switchers">
+    <span class="dot-btn purple" onclick="changeTheme('#b388ff', '#38bdf8')"></span>
+    <span class="dot-btn cyan" onclick="changeTheme('#38bdf8', '#00ffcc')"></span>
+    <span class="dot-btn green" onclick="changeTheme('#00ffcc', '#b388ff')"></span>
+</div>
+
+    <!-- Scripts สำหรับระบบ Particles, 3D Tilt และ Cursor Effects -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     
     <script>
-        // 1. ระบบ Particles
-        let pJS;
-        function initParticles(colorHex) {
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": [colorHex, "#ffffff"] },
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.5, "random": true },
-                    "size": { "value": 3, "random": true },
-                    "line_linked": { "enable": true, "distance": 130, "color": colorHex, "opacity": 0.25, "width": 1 },
-                    "move": { "enable": true, "speed": 1.6, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
-                },
-                "interactivity": {
-                    "detect_on": "window",
-                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
-                    "modes": { "grab": { "distance": 160, "line_linked": { "opacity": 0.6 } } }
-                },
-                "retina_detect": true
-            });
-        }
-        initParticles("#b388ff");
+        // 1. ตั้งค่า Particles พื้นหลัง
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": ["#b388ff", "#38bdf8", "#ffffff"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4, "random": true },
+                "size": { "value": 3.5, "random": true },
+                "line_linked": { "enable": true, "distance": 130, "color": "#b388ff", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 1.8, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                "modes": { "grab": { "distance": 180, "line_linked": { "opacity": 0.6 } } }
+            },
+            "retina_detect": true
+        });
 
-        // 2. ระบบ Custom Cursor
+        // 2. ระบบ Custom Cursor & Mouse Follower Light
         const dot = document.getElementById("cursor-dot");
         const outline = document.getElementById("cursor-outline");
         const glow = document.getElementById("cursor-glow");
@@ -111,31 +100,50 @@
         window.addEventListener("mousemove", (e) => {
             const posX = e.clientX;
             const posY = e.clientY;
+
+            // จุดกลางเมาส์ขยับทันที
             dot.style.left = `${posX}px`;
             dot.style.top = `${posY}px`;
-            outline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 200, fill: "forwards" });
-            glow.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 1000, fill: "forwards" });
+
+            // วงแหวนและแสงเรืองขยับตามแบบลื่นๆ (Smooth Transition)
+            outline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 250, fill: "forwards" });
+            glow.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 1200, fill: "forwards" });
         });
 
-        // 3. ระบบ 3D Card Tilt
+        // 3. ระบบ 3D Card Tilt (การ์ดเอียงตามเมาส์)
         VanillaTilt.init(document.querySelector("#tilt-card"), {
-            max: 10,
+            max: 12,
             speed: 400,
             glare: true,
-            "max-glare": 0.15,
+            "max-glare": 0.2,
         });
-
-        // 4. ระบบสลับสีธีม (CSS Variable Engine)
-        function changeTheme(color) {
-            document.documentElement.style.setProperty('--main-color', color);
-            
-            // อัปเดตสี Particles ให้ตรงกับธีมใหม่
-            if (window.pJSDom && window.pJSDom[0]) {
-                window.pJSDom[0].pJS.particles.color.value = [color, "#ffffff"];
-                window.pJSDom[0].pJS.particles.line_linked.color = color;
-                window.pJSDom[0].pJS.fn.particlesRefresh();
-            }
-        }
     </script>
+
 </body>
 </html>
+<script>
+    function changeTheme(mainColor) {
+        // 1. เปลี่ยนสีขอบโปรไฟล์ และสีข้อความเรืองแสง
+        document.querySelectorAll('.avatar, .glow-text').forEach(el => {
+            el.style.borderColor = mainColor;
+            el.style.color = mainColor;
+            el.style.textShadow = `0 0 10px ${mainColor}`;
+        });
+
+        // 2. เปลี่ยนสีวงแหวนเมาส์
+        const outline = document.getElementById("cursor-outline");
+        if (outline) outline.style.borderColor = mainColor;
+
+        // 3. เปลี่ยนสี Effect ตอน Hover ไอคอนโซเชียล
+        document.querySelectorAll('.socials a').forEach(el => {
+            el.onmouseenter = () => {
+                el.style.color = mainColor;
+                el.style.textShadow = `0 0 10px ${mainColor}`;
+            };
+            el.onmouseleave = () => {
+                el.style.color = "#ffffff";
+                el.style.textShadow = "none";
+            };
+        });
+    }
+</script>
