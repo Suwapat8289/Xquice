@@ -199,29 +199,3 @@ body {
     filter: drop-shadow(0 0 8px #b388ff);
 }
 
-/* ปุ่มจุดเลือกสีธีม */
-.theme-switchers {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 15px;
-}
-
-.dot-btn {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.dot-btn:hover {
-    transform: scale(1.3);
-}
-
-/* สีของแต่ละปุ่ม */
-.purple { background-color: #b388ff; box-shadow: 0 0 8px #b388ff; }
-.cyan   { background-color: #38bdf8; box-shadow: 0 0 8px #38bdf8; }
-.green  { background-color: #00ffcc; box-shadow: 0 0 8px #00ffcc; }
-.red    { background-color: #ff5555; box-shadow: 0 0 8px #ff5555; }
