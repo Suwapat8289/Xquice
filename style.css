@@ -151,6 +151,13 @@ body {
     margin-bottom: 25px;
 }
 
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
 .socials a {
     color: #ffffff;
     font-size: 1.2rem;
@@ -159,24 +166,19 @@ body {
     transition: all 0.3s ease;
 }
 
-/* เอฟเฟกต์ขยับตอน Hover รวม */
 .socials a:hover {
     opacity: 1;
     transform: translateY(-5px) scale(1.2);
 }
 
-/* สีเฉพาะของแต่ละไอคอนตอนเมาส์ชี้ */
-.socials a[href*="discord"]:hover   { color: #5865F2; text-shadow: 0 0 10px #5865F2; }
-.socials a[href*="facebook"]:hover  { color: #1877F2; text-shadow: 0 0 10px #1877F2; }
-.socials a[href*="instagram"]:hover { color: #E4405F; text-shadow: 0 0 10px #E4405F; }
-.socials a[href*="x.com"]:hover     { color: #ffffff; text-shadow: 0 0 10px #ffffff; }
-.socials a[href*="roblox"]:hover    { filter: drop-shadow(0 0 8px #00A2FF); }
-.socials a[href*="youtube"]:hover   { color: #FF0000; text-shadow: 0 0 10px #FF0000; }
-.socials a[href*="bilibili"]:hover  { color: #00A1D6; text-shadow: 0 0 10px #00A1D6; }
-.footer-text {
-    font-size: 0.65rem;
-    color: #52525b;
-}
+/* บังคับแยกสีตามแบรนด์จริง */
+.socials a[href*="discord"]:hover   { color: #5865F2 !important; text-shadow: 0 0 10px #5865F2 !important; }
+.socials a[href*="facebook"]:hover  { color: #1877F2 !important; text-shadow: 0 0 10px #1877F2 !important; }
+.socials a[href*="instagram"]:hover { color: #E4405F !important; text-shadow: 0 0 10px #E4405F !important; }
+.socials a[href*="x.com"]:hover     { color: #ffffff !important; text-shadow: 0 0 10px #ffffff !important; }
+.socials a[href*="roblox"]:hover    { filter: drop-shadow(0 0 8px #00A2FF) !important; }
+.socials a[href*="youtube"]:hover   { color: #FF0000 !important; text-shadow: 0 0 10px #FF0000 !important; }
+.socials a[href*="bilibili"]:hover  { color: #00A1D6 !important; text-shadow: 0 0 10px #00A1D6 !important; }
 
 /* --- Animations --- */
 @keyframes appear {
