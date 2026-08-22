@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: none; /* ซ่อนเมาส์ปกติของระบบ */
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+    background-color: #08080a;
+    color: #e1e1e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* --- เอฟเฟกต์เกี่ยวกับเมาส์ (Cursor Effects) --- */
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor-outline {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(179, 136, 255, 0.6);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.cursor-glow {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(179, 136, 255, 0.12) 0%, rgba(56, 189, 248, 0.05) 40%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.main-wrapper {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    perspective: 1000px;
+}
+
+/* --- โครงสร้างการ์ด --- */
+.outer-border {
+    border: 1px solid rgba(179, 136, 255, 0.2);
+    border-radius: 28px;
+    padding: 30px;
+    max-width: 480px;
+    width: 100%;
+    background: rgba(18, 18, 22, 0.75);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 20px rgba(179, 136, 255, 0.1);
+    transform-style: preserve-3d;
+}
+
+.card {
+    background-color: #16161a;
+    border: 1px solid #2a2a35;
+    border-radius: 20px;
+    padding: 35px 30px;
+    text-align: left;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.avatar {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #b388ff;
+    margin-bottom: 25px;
+    box-shadow: 0 0 20px rgba(179, 136, 255, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.08) rotate(5deg);
+}
+
+.sub-tag {
+    color: #b388ff;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.glow-text {
+    text-shadow: 0 0 8px rgba(179, 136, 255, 0.6);
+}
+
+.name {
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.info p {
+    color: #8d8d99;
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.socials a {
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.socials a:hover {
+    color: #b388ff;
+    opacity: 1;
+    transform: translateY(-5px) scale(1.2);
+    text-shadow: 0 0 10px #b388ff;
+}
+
+.footer-text {
+    font-size: 0.65rem;
+    color: #52525b;
+}
+
+/* --- Animations --- */
+@keyframes appear {
+    from { opacity: 0; transform: scale(0.85) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate__appear { animation: appear 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate__slideUp { animation: slideUp 1s ease-out forwards; }
+.animate__slideUpDelay { animation: slideUp 1s ease-out 0.2s forwards; opacity: 0; }
+.animate__fadeIn { animation: fadeIn 1.2s ease-out 0.4s forwards; opacity: 0; }
+
+.socials a img {
+    transition: filter 0.3s ease;
+}
+.socials a:hover img {
+    filter: drop-shadow(0 0 8px #b388ff);
+}
+
+/* ปุ่มจุดเลือกสีธีม */
+.theme-switchers {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.dot-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dot-btn:hover {
+    transform: scale(1.3);
+}
+
+/* สีของแต่ละปุ่ม */
+.purple { background-color: #b388ff; box-shadow: 0 0 8px #b388ff; }
+.cyan   { background-color: #38bdf8; box-shadow: 0 0 8px #38bdf8; }
+.green  { background-color: #00ffcc; box-shadow: 0 0 8px #00ffcc; }
+.red    { background-color: #ff5555; box-shadow: 0 0 8px #ff5555; }
